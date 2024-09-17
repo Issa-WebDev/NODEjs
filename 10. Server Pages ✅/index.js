@@ -4,7 +4,10 @@ import http from "http";
 const server = http.createServer(async (req, res) => {
   if (req.url === "/") {
     try {
-      const data = await fs.readFile("./reviews/home.html", "utf-8");
+      const data = await fs.readFile(
+        "./10. Server Pages ✅/home.html",
+        "utf-8"
+      );
       res.writeHead(200, "OK", { "Content-type": "text/html" });
       res.end(data);
     } catch (error) {
@@ -14,7 +17,10 @@ const server = http.createServer(async (req, res) => {
     }
   } else if (req.url === "/about") {
     try {
-      const data = await fs.readFile("./reviews/about.html", "utf-8");
+      const data = await fs.readFile(
+        "./10. Server Pages ✅/about.html",
+        "utf-8"
+      );
       res.writeHead(200, "OK", { "Content-type": "text/html" });
       res.end(data);
     } catch (error) {
@@ -24,7 +30,10 @@ const server = http.createServer(async (req, res) => {
     }
   } else if (req.url === "/contact") {
     try {
-      const data = await fs.readFile("./reviews/contact.html", "utf-8");
+      const data = await fs.readFile(
+        "./10. Server Pages ✅/contact.html",
+        "utf-8"
+      );
       res.writeHead(200, "OK", { "Content-type": "text/html" });
       res.end(data);
     } catch (error) {
