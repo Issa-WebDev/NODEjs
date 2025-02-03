@@ -11,6 +11,9 @@ const server = http.createServer((req, res) => {
   } else if (req.url === "/contact") {
     res.writeHead(200, "Good", { "Content-type": "text/html" });
     res.end("<h1>ABOUT CONTACT</h1>");
+  } else if (req.url === "/testimonials") {
+    res.writeHead(200, "Good", { "Content-type": "text/html" });
+    res.end("<h1>TESTIMONIALS SECTION</h1>");
   } else {
     res.writeHead(404, "BAB", { "Content-type": "text/html" });
     res.end("<h1>404 PAGES NOT FOUND :(</h1>");
