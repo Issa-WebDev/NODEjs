@@ -1,7 +1,5 @@
-function greet(username) {
-  console.log("Hello", username);
-}
+const greeting = (user) => {
+  return `Hello! My name is ${user.name} and i am ${user.age}`;
+};
 
-// Tell others files yu can have acces to this function.
-export default greet;
-
+export default greeting;

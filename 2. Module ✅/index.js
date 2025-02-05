@@ -1,13 +1,12 @@
-// This will allows us to use that function from
-// that (greet.js) file, and we can use it right here.
-const greet = require("./greet");
-const { p1, p2, p3 } = require("./person");
+const { a, moyen } = require("./moyen");
+const { jhonNotes, issaNotes, sylaNotes } = require("./students");
 
-greet(p1);
-greet(p2);
-greet(p3);
+console.log(a);
 
-console.log("=========================================");
-console.log(p1);
-console.log(p2);
-console.log(p3);
+const jhonMoyen = moyen(jhonNotes);
+const issaMoyen = moyen(issaNotes);
+const sylaMoyen = moyen(sylaNotes);
+
+console.log(`Jhon : ${jhonMoyen}`);
+console.log(`Issa : ${issaMoyen}`);
+console.log(`Syla : ${sylaMoyen}`);

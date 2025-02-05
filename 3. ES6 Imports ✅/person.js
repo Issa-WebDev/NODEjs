@@ -1,5 +1,6 @@
-const p1 = "Issa";
-const p2 = "Jhon";
-const p3 = "Max";
+const user = {
+  name: "KissCoder",
+  age: 22,
+};
 
-export { p1, p2, p3 };
+export { user };
