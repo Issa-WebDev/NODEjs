@@ -1,24 +1,22 @@
-import url from "url";
+import http from "http";
+const PORT = 1000;
 
-const myUrl = new URL(
-  "https://user:pass@sub.example.com:8080/p/a/t/h?query=string#hash"
-);
-// console.log(myUrl.href);
-// console.log(myUrl.origin);
-// console.log(myUrl.protocol);
-// console.log(myUrl.username);
-// console.log(myUrl.password);
-// console.log(myUrl.host);
-// console.log(myUrl.hostname);
-// console.log(myUrl.port);
-// console.log(myUrl.pathname);
-// console.log(myUrl.search);
-// console.log(myUrl.searchParams);
-// console.log(myUrl.hash);
+const server = http.createServer((req, res) => {
+  if (req.url === "/") {
+    res.writeHead(200, "Found", { "Content-Type": "text/html" });
+    res.end("<h1>HOME</h1>");
+  } else if (req.url === "/about") {
+    res.writeHead(200, "Found", { "Content-Type": "text/html" });
+    res.end("<h1>ABOUT</h1>");
+  } else if (req.url === "/contact") {
+    res.writeHead(200, "Found", { "Content-Type": "text/html" });
+    res.end("<h1>CONTACT</h1>");
+  } else {
+    res.writeHead(404, "Not Found", { "Content-Type": "text/html" });
+    res.end("<h1 style='color: red;'>404 NOT FOUND</h1>");
+  }
+});
 
-myUrl.username = "kisscoder";
-myUrl.password = "kiss@coder1";
-myUrl.port = 1000;
-
-console.log(myUrl.toJSON());
-console.log(myUrl.toString());
+server.listen(PORT, () => {
+  console.log(`server up`);
+});
