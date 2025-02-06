@@ -1,22 +1,23 @@
 import http from "http";
-const PORT = 1000;
+import fs from "fs";
+const PORT = 1111;
 
 const server = http.createServer((req, res) => {
   if (req.url === "/") {
-    res.writeHead(200, "Found", { "Content-Type": "text/html" });
-    res.end("<h1>HOME</h1>");
+    res.writeHead(200, "OK", { "Content-Type": "text/html" });
+    fs.readFile("./home.html", (err, data) => {
+      err ? console.log(err) : res.end(data);
+    });
   } else if (req.url === "/about") {
-    res.writeHead(200, "Found", { "Content-Type": "text/html" });
-    res.end("<h1>ABOUT</h1>");
-  } else if (req.url === "/contact") {
-    res.writeHead(200, "Found", { "Content-Type": "text/html" });
-    res.end("<h1>CONTACT</h1>");
+    res.writeHead(200, "OK", { "Content-Type": "text/html" });
+    fs.readFile("./about.html", (err, data) => {
+      err ? console.log(err) : res.end(data);
+    });
   } else {
-    res.writeHead(404, "Not Found", { "Content-Type": "text/html" });
-    res.end("<h1 style='color: red;'>404 NOT FOUND</h1>");
+    res.end("<h1 style='color: red;'>404 PAGE NOT FOUND :(</h1>");
   }
 });
 
 server.listen(PORT, () => {
-  console.log(`server up`);
+  console.log(`Server is Up on http://localhost:${PORT}`);
 });
