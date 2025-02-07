@@ -1,8 +1,8 @@
 import http from "http";
 
 const server = http.createServer((req, res) => {
-  res.writeHead(200, "OK", { "Content-type": "text/html" });
-  res.end("<h1> nodemon is so power and awesome ==> next</h1>");
+  res.writeHead(200, "Ok", { "Contebt-Type": "text/html" });
+  res.end("<h1>NODE JS SERVER PAGES</h1>")
 });
 
-server.listen(8100, () => console.log("Server Up and running on port 8100"));
+server.listen(1000, () => console.log('server is up'))
